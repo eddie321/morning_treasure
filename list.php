@@ -14,18 +14,22 @@ $movies = $stmt->fetchALL();
 
 
 
-foreach ($movies as $movie) {
-    echo htmlspecialchars($movie['name']);
+foreach ($golf_gears as $golf_gear) {
+    echo htmlspecialchars($golf_gear['name']);
     echo('<br>');
-    echo htmlspecialchars($movie['description']);
+    echo htmlspecialchars($golf_gear['description']);
     echo('<br>');
-    echo htmlspecialchars($movie['director']);
+    echo htmlspecialchars($golf_gear['price']);
     echo('<br>');
-    echo '<strong>Genre:';
-    echo htmlspecialchars($genres[$movie['genre']]);
+    echo '<strong>Product Category:';
+    echo htmlspecialchars($golf_gears[$golf_gear['product_category']]);
     echo '</strong>';
     echo('<br>');
-    echo '<a href="edit.php?id=' . htmlspecialchars($movie['id']) . '">edit</a>';
+    echo '<strong>Manufacturer:';
+    echo htmlspecialchars($golf_gears[$golf_gear['manufacturer']]);
+    echo '</strong>';
+    echo('<br>');
+    echo '<a href="edit.php?id=' . htmlspecialchars($golf_gear['id']) . '">edit</a>';
     echo '<hr>';
 
 }

@@ -61,7 +61,7 @@ if ($_POST)
     
     if ($valid)
     {
-        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_product_category) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
         $stmt->execute([$_POST['name'], $_POST['manufacturer'], $_POST['description'], $_POST['price'], $_POST['availability'], $_POST['product_category']]);
         header('Location: form.php?status=ok');
         exit();
