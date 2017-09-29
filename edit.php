@@ -17,4 +17,6 @@ $stmt = $db->prepare('SELECT * FROM golf_gear WHERE id = ?');
 $stmt->execute([$_GET['id']]);
 $golf_gear = $stmt->fetch();
 
-echo build_form($golf_gear['name'], $golf_gear['product_price'], $golf_gear['manufacturer'], $golf_gear['product_description'], $golf_gear['availability'], $golf_gear['product_category']);
+
+
+echo build_form($golf_gear['product_name'], $golf_gear['product_price'], $golf_gear['manufacturer'], $golf_gear['product_description'], $golf_gear['availability'], $golf_gear['product_category']);
