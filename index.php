@@ -15,8 +15,8 @@ if ($_POST)
     $manufacturer=htmlspecialchars($_POST['manufacturer']);
     $product_description=htmlspecialchars($_POST['product_description']);
     $price=htmlspecialchars($_POST['price']);
-    $in_stock=htmlspecialchars($_POST['in_stock']);
-    $category=htmlspecialchars($_POST['category']);
+    $availability=htmlspecialchars($_POST['availability']);
+    $product_category=htmlspecialchars($_POST['product_category']);
 
 
     // error messages in case of empty field. any error result will change validity to false, and form will not be submitted.
@@ -44,15 +44,15 @@ if ($_POST)
         $valid=false;
     }
 
-    if (empty($_POST['in_stock']))
+    if (empty($_POST['availability']))
     {
         $errors=['You need to fill in the product availability (in stock?)'];
         $valid=false;
     }
 
-    if (empty($_POST['category']))
+    if (empty($_POST['product_category']))
     {
-        $errors=['You need to fill in the product category'];
+        $errors=['You need to fill in the product product_category'];
         $valid=false;
     }
 
@@ -61,8 +61,8 @@ if ($_POST)
     
     if ($valid)
     {
-        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
-        $stmt->execute([$_POST['name'], $_POST['manufacturer'], $_POST['description'], $_POST['price'], $_POST['in_stock'], $_POST['category']]);
+        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_product_category) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt->execute([$_POST['name'], $_POST['manufacturer'], $_POST['description'], $_POST['price'], $_POST['availability'], $_POST['product_category']]);
         header('Location: form.php?status=ok');
         exit();
     }
@@ -84,8 +84,8 @@ else
     $manufacturer=0;
     $product_description=null;
     $price=0;
-    $in_stock=0;
-    $category=0;   
+    $availability=0;
+    $product_category=0;   
 }
 
 if (isset($_GET['status']) && $_GET['status'] == 'ok') {
@@ -126,13 +126,13 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
             <br>
             <br>
             In Stock?
-            <input type="checkbox" name="in_stock" unchecked>
+            <input type="checkbox" name="availability" unchecked>
             <br><br>
-            Product Category:
-            <select name="category">
+            Product product_category:
+            <select name="product_product_category">
                 <?php
-                    foreach($categories as $id => $category){
-                        echo "<option value=$id>$category</option>";
+                    foreach($categories as $id => $product_product_category){
+                        echo "<option value=$id>$product_category</option>";
                     }
                 ?>
             </select>
