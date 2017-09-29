@@ -73,8 +73,6 @@ if ($_POST)
             echo $error;
         }
     }
-
-
 }
 
 // if not $_POST - i.e. if form is not submitted
