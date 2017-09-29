@@ -19,23 +19,19 @@ $golf_gears = $stmt->fetchALL();
 
 
 foreach ($golf_gears as $golf_gear) {
-    echo htmlspecialchars($golf_gear['product_name']);
-    echo('<br>');
-    echo htmlspecialchars($golf_gear['product_price']);
-    echo('<br>');
-    echo '<strong>Manufacturer:';
-    echo htmlspecialchars($golf_gears[$golf_gear['manufacturer']]);
-    echo '</strong>';
-    echo('<br>');
-    echo htmlspecialchars($golf_gear['product_description']);
-    echo('<br>');
-    echo htmlspecialchars($golf_gear['availability']);
-    echo('<br>');
-    echo '<strong>Product Category:';
-    echo htmlspecialchars($golf_gears[$golf_gear['product_category']]);
-    echo '</strong>';
-    echo('<br>');
-    echo '<a href="edit.php?id=' . htmlspecialchars($golf_gear['id']) . '">edit</a>';
+
+    echo '<h2>' . htmlspecialchars($golf_gear['product_name']) . '</h2>';
+
+    echo '<p class="price">Price: ' . htmlspecialchars($golf_gear['product_price']) . '</p>';
+    
+    echo '<p class="manufacturer">Manufacturer: ' . htmlspecialchars($golf_gear['manufacturer']) . '</p>';
+   
+    echo '<p class="product_description">Product Description: ' . htmlspecialchars($golf_gear['product_description']) . '</p>';
+    
+    echo '<p class="availability">In Stock? ' . htmlspecialchars($golf_gear['availability']) . '</p>';
+   
+    echo '<p class="category">Product Category: ' . htmlspecialchars($golf_gear['product_category']) . '</p>';
+
+    echo '<p class="id">ID: <a href="edit.php?id=' . htmlspecialchars($golf_gear['id']) . '">edit</a></p>';
     echo '<hr>';
 }
-
