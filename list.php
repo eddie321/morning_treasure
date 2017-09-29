@@ -31,5 +31,4 @@ foreach ($golf_gears as $golf_gear) {
     echo('<br>');
     echo '<a href="edit.php?id=' . htmlspecialchars($golf_gear['id']) . '">edit</a>';
     echo '<hr>';
-
 }
