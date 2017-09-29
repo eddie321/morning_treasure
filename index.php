@@ -88,9 +88,9 @@ else
 }
 
 if (isset($_GET['status']) && $_GET['status'] == 'ok') {
-    echo '<h1 class="redirect_head">Well Done! You successfully added an item to the database!</h1><br>';
+    echo '<div class="redirect"><h1 class="redirect_head">Well Done! You successfully added an item to the database!</h1><br>';
     echo '<p class="redirect_entry">Make another Entry? <a href="index.php">Click here!</a></p><br>';
-    echo '<p class="redirect_edit">View the database or edit existing item? <a href="list.php">Click here!</a></p><br>';
+    echo '<p class="redirect_edit">View the database or edit existing item? <a href="list.php">Click here!</a></p><br></div>';
     die;
 }
 
