@@ -16,7 +16,24 @@ if (!isset($_GET['id'])) {
 $stmt = $db->prepare('SELECT * FROM golf_gear WHERE id = ?');
 $stmt->execute([$_GET['id']]);
 $golf_gear = $stmt->fetch();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Golf Golf Golf!!!!!</title>
+    <link rel="stylesheet" href="form_style.css">
+</head>
+<body>
 
 
+<div class="form">
+<?php
+   echo build_form($golf_gear['product_name'], $golf_gear['product_price'], $golf_gear['manufacturer'], $golf_gear['product_description'], $golf_gear['availability'], $golf_gear['product_category']);
+?>
+</div>
 
-echo build_form($golf_gear['product_name'], $golf_gear['product_price'], $golf_gear['manufacturer'], $golf_gear['product_description'], $golf_gear['availability'], $golf_gear['product_category']);
+</body>
+</html>
