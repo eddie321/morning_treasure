@@ -1,7 +1,10 @@
 <?php
+
+require_once 'config.php';
+
 function db_connect()
 {
-$db = new PDO('mysql:host=localhost;dbname=golf_gear;charset=utf8', 'root','Mundiwa1995');
+$db = new PDO('mysql:host=localhost;dbname=$db_name;charset=utf8', $db_user,$db_pass);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//enabling errors just for our case
 return $db;
 }
