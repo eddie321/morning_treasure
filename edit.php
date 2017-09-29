@@ -12,4 +12,4 @@ $golf_gear = $stmt->fetch();
 
 var_dump($golf_gear);
 
-echo build_form($movie['name'], $movie['director'], $movie['description'], $movie['genre']);
+echo build_form($golf_gear['name'], $golf_gear['price'], $golf_gear['manufacturer'], $golf_gear['product_description'], $golf_gear['availability'], $golf_gear['product_category']);
