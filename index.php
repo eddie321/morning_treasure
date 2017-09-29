@@ -2,6 +2,7 @@
 require_once 'db.php';
 require_once 'manufacturers.php';
 require_once 'product_category.php';
+require_once 'functions.php';
 $db = db_connect();
 
 $valid=true;
