@@ -128,10 +128,10 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
             In Stock?
             <input type="checkbox" name="availability" unchecked>
             <br><br>
-            Product product_category:
-            <select name="product_product_category">
+            Product Category:
+            <select name="product_category">
                 <?php
-                    foreach($categories as $id => $product_product_category){
+                    foreach($categories as $id => $product_category){
                         echo "<option value=$id>$product_category</option>";
                     }
                 ?>
