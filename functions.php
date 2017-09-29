@@ -15,7 +15,7 @@ function build_form($name, $manufacturer, $price, $product_description, $availab
         <br>
 
         Price:
-        <input type="number" name="price" value="' . htmlspecialchars($price) . '">
+        <input type="number" min="0" step="1" name="price" value="' . htmlspecialchars($price) . '">
         <br>
         <br>
 
