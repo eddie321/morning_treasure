@@ -53,7 +53,7 @@ if ($_POST)
 
     if (empty($_POST['product_category']))
     {
-        $errors=['You need to fill in the product product_category'];
+        $errors=['You need to fill in the product category'];
         $valid=false;
     }
 
@@ -62,16 +62,17 @@ if ($_POST)
     
     if ($valid)
     {
-        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
-        $stmt->execute([$_POST['name'], $_POST['manufacturer'], $_POST['description'], $_POST['price'], $_POST['availability'], $_POST['product_category']]);
-        header('Location: form.php?status=ok');
-        exit();
+        $stmt=$db->prepare('INSERT INTO golf_gear (product_name, product_description, product_price, manufacturer, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt->execute([$_POST['name'], $_POST['product_description'], $_POST['price'], $_POST['manufacturer'], $_POST['availability'], $_POST['product_category']]);
+        header('Location: index.php?status=ok');
+        include 'list.php';
+        die ('Successfull Entry !!!');
     }
     else
     {
         foreach($errors as $error)
         {
-            echo $error;
+            echo '<h3>' . $error . '</h3>';
         }
     }
 }
@@ -82,7 +83,7 @@ else
     $name=null;
     $manufacturer=0;
     $product_description=null;
-    $price=0;
+    $price=null;
     $availability=0;
     $product_category_id = 0;   
 }

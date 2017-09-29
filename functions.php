@@ -49,8 +49,8 @@ function build_form($name, $manufacturer, $price, $product_description, $availab
         product category:
         <select name="product_category">';
         require 'product_category.php';
-        foreach ($product_category as $id => $product_category) {   // id is key 0,1,2,3 etc in availability.php
-                $form .= "<option value=$id>$product_category</option>";
+        foreach ($product_category as $id => $category) {   // id is key 0,1,2,3 etc in availability.php
+                $form .= "<option value=$id>$category</option>";
         }
         $form .= ' 
         </select>
