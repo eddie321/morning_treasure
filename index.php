@@ -105,10 +105,11 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
 
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-
+<div class="form">
 <?php
    echo build_form('', '', '', '', '', '');
 ?>
+</div>
 
 </body>
 </html>
