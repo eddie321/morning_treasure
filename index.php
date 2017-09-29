@@ -1,5 +1,7 @@
 <?php
-include 'db.php';
+require_once 'db.php';
+require_once 'manufacturers.php';
+require_once 'product_category.php';
 $db = db_connect();
 
 $valid=true;
