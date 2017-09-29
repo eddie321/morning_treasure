@@ -27,5 +27,4 @@ foreach ($movies as $movie) {
     echo('<br>');
     echo '<a href="edit.php?id=' . htmlspecialchars($movie['id']) . '">edit</a>';
     echo '<hr>';
-
 }
