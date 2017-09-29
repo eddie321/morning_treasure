@@ -108,7 +108,7 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
     <br>
 
 <?php
-   echo build_form('', '', '', '', '');
+   echo build_form('', '', '', '', '', '');
 ?>
 
 </body>

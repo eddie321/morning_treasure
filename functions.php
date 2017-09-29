@@ -1,6 +1,6 @@
 <?php
 
-function build_form($name, $manufacturer, $product_description, $availability, $product_category)
+function build_form($name, $manufacturer, $price, $product_description, $availability, $product_category)
 {
 
 
@@ -13,6 +13,13 @@ function build_form($name, $manufacturer, $product_description, $availability, $
         <input type="text" name="name" value="' . htmlspecialchars($name) . '">
         <br>
         <br>
+
+        Product Name:
+        <input type="text" name="price" value="' . htmlspecialchars($price) . '">
+        <br>
+        <br>
+
+
         Manufacturer:
         <select name="manufacturer">';
         require 'manufacturers.php';
