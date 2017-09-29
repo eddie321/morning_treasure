@@ -101,45 +101,15 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
     <title>Golf Golf Golf!!!!!</title>
 </head>
 <body>
-<section>
-        <h1>Movie DB</h1>
-<?php var_dump ($product_category);
+
+<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+    <h1>Movie Database</h1>
+    <br>
+
+<?php
+   echo build_form('', '', '', '', '');
 ?>
-        <div class="form">
-            <form action="" method="post">
-            Product Name:
-            <input type="text" name="name" value="<?php echo $name?>">
-            <br>
-            <br>
-            Manufacturer:
-            <input type="text" name="manufacturer" value="<?php echo $manufacturer?>">
-            <br>
-            <br>
-            Product Description:
-            <br>
-            <textarea name="product_description" cols="30" rows="10"><?php echo $product_description?></textarea>
-            <br>
-            <br>
-            Price:            
-            <input type="text" name="price" value="<?php echo $price?>">
-            <br>
-            <br>
-            In Stock?
-            <input type="checkbox" name="availability" unchecked>
-            <br><br>
-            Product Category:
-            <select name="product_category">
-                <?php
-                    foreach($product_category as $id => $category){
-                        echo "<option value='" . $id . "'>" . $category . "</option>";
-                    }
-                ?>
-            </select>
-            <br>
-            <br>
-            <input class="button" type="submit" name="submit" value="Submit">
-            </form>
-        </div>
-    </section>
+
 </body>
 </html>
