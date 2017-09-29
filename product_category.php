@@ -1,6 +1,6 @@
 <?php
 
-$category = [
+$product_category = [
     0 => 'Irons',
     1 => 'Golfballs',
     2 => 'Putters',
