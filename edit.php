@@ -32,7 +32,12 @@ $golf_gear = $stmt->fetch();
 <div class="form">
 <?php
    echo build_form($golf_gear['product_name'], $golf_gear['product_price'], $golf_gear['manufacturer'], $golf_gear['product_description'], $golf_gear['availability'], $golf_gear['product_category']);
-?>
+
+?><br>
+
+<a href="index.php">Back to main form</a><br><br>
+
+<a href="list.php">Back to product list</a>
 </div>
 
 </body>
