@@ -14,7 +14,7 @@ function build_form($name, $manufacturer, $product_description, $availability, $
         <br>
         <br>
         Manufacturer:
-        <select name="genre">';
+        <select name="manufacturer">';
         require 'manufacturers.php';
         foreach ($manufacturer as $id => $manufacturer) {   // id is key 0,1,2,3 etc in genres.php
                 $form .= "<option value=$id>$manufacturer</option>";

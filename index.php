@@ -91,7 +91,6 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
     echo 'please review your entry, changes can be made in edit section';
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
