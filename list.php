@@ -12,20 +12,23 @@ $stmt = $db->prepare('SELECT * FROM golf_gear');
 $stmt->execute();
 $golf_gears = $stmt->fetchALL();
 
-// var_dump($golf_gear);
+
+
+
 
 
 
 foreach ($golf_gears as $golf_gear) {
-    echo htmlspecialchars($golf_gear['name']);
+    var_dump($golf_gear);
+    echo htmlspecialchars($golf_gear['product_name']);
     echo('<br>');
-    echo htmlspecialchars($golf_gear['price']);
+    echo htmlspecialchars($golf_gear['product_price']);
     echo('<br>');
     echo '<strong>Manufacturer:';
     echo htmlspecialchars($golf_gears[$golf_gear['manufacturer']]);
     echo '</strong>';
     echo('<br>');
-    echo htmlspecialchars($golf_gear['description']);
+    echo htmlspecialchars($golf_gear['product_description']);
     echo('<br>');
     echo htmlspecialchars($golf_gear['availability']);
     echo('<br>');
@@ -36,3 +39,4 @@ foreach ($golf_gears as $golf_gear) {
     echo '<a href="edit.php?id=' . htmlspecialchars($golf_gear['id']) . '">edit</a>';
     echo '<hr>';
 }
+
