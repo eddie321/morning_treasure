@@ -61,7 +61,7 @@ if ($_POST)
     
     if ($valid)
     {
-        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_product_category) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
         $stmt->execute([$_POST['name'], $_POST['manufacturer'], $_POST['description'], $_POST['price'], $_POST['availability'], $_POST['product_category']]);
         header('Location: form.php?status=ok');
         exit();
@@ -128,10 +128,10 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
             In Stock?
             <input type="checkbox" name="availability" unchecked>
             <br><br>
-            Product product_category:
-            <select name="product_product_category">
+            Product Category:
+            <select name="product_category">
                 <?php
-                    foreach($categories as $id => $product_product_category){
+                    foreach($categories as $id => $product_category){
                         echo "<option value=$id>$product_category</option>";
                     }
                 ?>
