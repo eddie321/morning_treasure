@@ -19,7 +19,6 @@ $golf_gears = $stmt->fetchALL();
 
 
 foreach ($golf_gears as $golf_gear) {
-    var_dump($golf_gear);
     echo htmlspecialchars($golf_gear['product_name']);
     echo('<br>');
     echo htmlspecialchars($golf_gear['product_price']);
