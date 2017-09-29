@@ -14,7 +14,7 @@ function build_form($name, $manufacturer, $price, $product_description, $availab
         <br>
         <br>
 
-        Product Name:
+        Price:
         <input type="text" name="price" value="' . htmlspecialchars($price) . '">
         <br>
         <br>
@@ -46,7 +46,7 @@ function build_form($name, $manufacturer, $price, $product_description, $availab
 
         <br>
         <br>
-        In stock:
+        product category:
         <select name="product_category">';
         require 'product_category.php';
         foreach ($product_category as $id => $product_category) {   // id is key 0,1,2,3 etc in availability.php
