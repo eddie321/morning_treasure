@@ -88,7 +88,10 @@ else
 }
 
 if (isset($_GET['status']) && $_GET['status'] == 'ok') {
-    echo 'success!!!!!!!';
+    echo 'Well Done! You successfully added an item to the database!<br>';
+    echo 'Make another Entry? <a href="index.php">Click here!</a><br>';
+    echo 'View the database or edit existing item? <a href="list.php">Click here!</a><br>';
+    die;
 }
 
 ?>
