@@ -15,7 +15,7 @@ if ($_POST)
     $manufacturer=htmlspecialchars($_POST['manufacturer']);
     $product_description=htmlspecialchars($_POST['product_description']);
     $price=htmlspecialchars($_POST['price']);
-    $availability=htmlspecialchars($_POST['availability']);
+    $availability=!empty($_POST['availability']);
     $product_category=htmlspecialchars($_POST['product_category']);
 
 
@@ -61,7 +61,7 @@ if ($_POST)
     
     if ($valid)
     {
-        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_product_category) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt=$db->prepare('INSERT INTO golf_gear (name, manufacturer, description, price, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
         $stmt->execute([$_POST['name'], $_POST['manufacturer'], $_POST['description'], $_POST['price'], $_POST['availability'], $_POST['product_category']]);
         header('Location: form.php?status=ok');
         exit();
@@ -85,7 +85,7 @@ else
     $product_description=null;
     $price=0;
     $availability=0;
-    $product_category=0;   
+    $product_category_id = 0;   
 }
 
 if (isset($_GET['status']) && $_GET['status'] == 'ok') {
@@ -105,7 +105,8 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
 <body>
 <section>
         <h1>Movie DB</h1>
-
+<?php var_dump ($product_category);
+?>
         <div class="form">
             <form action="" method="post">
             Product Name:
@@ -131,8 +132,8 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
             Product Category:
             <select name="product_category">
                 <?php
-                    foreach($categories as $id => $product_category){
-                        echo "<option value=$id>$product_category</option>";
+                    foreach($product_category as $id => $category){
+                        echo "<option value='" . $id . "'>" . $category . "</option>";
                     }
                 ?>
             </select>
