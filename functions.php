@@ -1,6 +1,6 @@
 <?php
 
-function build_form($name, $manufacturer, $product_description, $in_stock, $product_category)
+function build_form($name, $manufacturer, $product_description, $availability, $product_category)
 {
 
 
@@ -29,10 +29,10 @@ function build_form($name, $manufacturer, $product_description, $in_stock, $prod
         <br>
         <br>
         In stock:
-        <select name="in_stock">';
-        require 'in_stocks.php';
-        foreach ($in_stocks as $id => $in_stock) {   // id is key 0,1,2,3 etc in in_stock.php
-                $form .= "<option value=$id>$in_stock</option>";
+        <select name="availability">';
+        require 'availability.php';
+        foreach ($availabilities as $id => $availability) {   // id is key 0,1,2,3 etc in availability.php
+                $form .= "<option value=$id>$availability</option>";
         }
         $form .= ' 
         </select>
@@ -42,13 +42,13 @@ function build_form($name, $manufacturer, $product_description, $in_stock, $prod
         In stock:
         <select name="product_category">';
         require 'product_category.php';
-        foreach ($product_category as $id => $product_category) {   // id is key 0,1,2,3 etc in in_stock.php
+        foreach ($product_category as $id => $product_category) {   // id is key 0,1,2,3 etc in availability.php
                 $form .= "<option value=$id>$product_category</option>";
         }
         $form .= ' 
         </select>
         <input type="submit">
-        </form>;
+        </form>';
 
     return $form;
     }
