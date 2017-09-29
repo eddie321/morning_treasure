@@ -99,13 +99,12 @@ if (isset($_GET['status']) && $_GET['status'] == 'ok') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Golf Golf Golf!!!!!</title>
+    <link rel="stylesheet" href="form_style.css">
 </head>
 <body>
 
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-    <h1>Movie Database</h1>
-    <br>
 
 <?php
    echo build_form('', '', '', '', '', '');
