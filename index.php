@@ -65,8 +65,7 @@ if ($_POST)
         $stmt=$db->prepare('INSERT INTO golf_gear (product_name, product_description, product_price, manufacturer, availability, product_category) VALUES (?, ?, ?, ?, ?, ?)');
         $stmt->execute([$_POST['name'], $_POST['product_description'], $_POST['price'], $_POST['manufacturer'], $_POST['availability'], $_POST['product_category']]);
         header('Location: index.php?status=ok');
-        include 'list.php';
-        die ('Successfull Entry !!!');
+        
     }
     else
     {
@@ -89,7 +88,7 @@ else
 }
 
 if (isset($_GET['status']) && $_GET['status'] == 'ok') {
-    echo 'please review your entry, changes can be made in edit section';
+    echo 'success!!!!!!!';
 }
 
 ?>
