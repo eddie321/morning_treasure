@@ -1,6 +1,6 @@
 <?php
 
-$in_stock = [
+$availability = [
     0 => 'Yes',
     1 => 'No'
 ];
