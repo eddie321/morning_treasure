@@ -31,7 +31,7 @@ function build_form($name, $manufacturer, $product_description, $availability, $
         In stock:
         <select name="availability">';
         require 'availability.php';
-        foreach ($availabilities as $id => $availability) {   // id is key 0,1,2,3 etc in availability.php
+        foreach ($availability as $id => $availability) {   // id is key 0,1,2,3 etc in availability.php
                 $form .= "<option value=$id>$availability</option>";
         }
         $form .= ' 
